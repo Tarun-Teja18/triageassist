@@ -1,0 +1,49 @@
+# ---------------------------------------------------------------------------
+# SECRETS — never commit these.
+# .env holds the real GROQ_API_KEY. .env.example (committed) holds only
+# placeholder values, so a new developer knows which variables to set.
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# Project data caches — regenerated at startup, never committed.
+# The Chroma index is rebuilt from the markdown knowledge base each boot, and
+# sentence-transformers caches the downloaded embedding model here.
+# ---------------------------------------------------------------------------
+.chroma/
+chroma_db/
+.cache/
+models/
+
+# ---------------------------------------------------------------------------
+# Node / React
+# node_modules/ is huge and fully reproducible from package-lock.json.
+# The lock file IS committed; the installed packages are not.
+# ---------------------------------------------------------------------------
+node_modules/
+dist/
+build/
+.vite/
+*.local
+
+# ---------------------------------------------------------------------------
+# Editors / macOS
+# ---------------------------------------------------------------------------
+.DS_Store
+.vscode/
+.idea/
+*.swp
