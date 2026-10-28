@@ -1,0 +1,10 @@
+# Dependencies are added one step at a time, so that any install problem is
+# easy to trace back to the change that caused it.
+
+# Step 1 — web layer
+fastapi>=0.115          # the web framework itself
+uvicorn[standard]>=0.30 # the ASGI server that actually runs it
+
+# Step 2 — LLM access
+groq>=0.11              # official Groq SDK (sync + async clients)
+pydantic-settings>=2.4  # typed config loaded from environment / .env
